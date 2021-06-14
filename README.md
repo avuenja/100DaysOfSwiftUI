@@ -15,3 +15,25 @@
 - String interpolation we use backslash (\) followed by parentheses (), that involve a variable.
 - For immutable variables we owe to use the `let` word. Thus we create a constants.
 - Type annotations: Also, we can to make explicit the variables/constants types, passing the type after name using `name: Type` e.g.: `let isActive: Bool = true`.
+
+### Day 2 - arrays, dictionaries, sets, and enums
+
+- Arrays can keep many values inside itself, and remember, the index ever always start with 0.
+- Set not guarantee the order of objects inside itself, also Set not keep duplicate values. For create a new `Set`, we ever to pass an array for inside it.
+- Tuples don't change it size, we can't add more values or remove it.
+- The principal difference is that `Tuples` are fixed size and named index, `Set` are unique values and `Arrays` are can keep many values even thought duplicates.
+- Dictionaries can keep many values ahead a named index. Also we can define a default value if named index not exists.
+- We can create an empty arrays, dictionaries and sets.
+- Enumerations are perfect for keep consistent results. Also we can add associated values for the enum, for thus we don't need create a giant enum.
+- Enum raw values, enables us to use dynamically values.
+
+### Day 3 - operators and conditions
+
+- Arithmetic operators are: `+ - * / %`.
+- Operator overloading: `+` sum if is Int or `Double` numbers, concat if is `String`, join if is `Array`.
+- Compound assignment operators: `+=` `-=`
+- Comparison operators: `==` `!=` `>=` `<=` `>` `<`
+- Conditions: `if` `else` `else if`.
+- Combining conditions: `&&` (and) and `||` (or).
+- The ternary operator: `let phone = "iPhone"` `print(phone == "Android" ? "Failure" : "Success")`
+- Range operators: `..<` `..>` `...`
