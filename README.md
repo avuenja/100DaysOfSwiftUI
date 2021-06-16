@@ -37,3 +37,29 @@
 - Combining conditions: `&&` (and) and `||` (or).
 - The ternary operator: `let phone = "iPhone"` `print(phone == "Android" ? "Failure" : "Success")`
 - Range operators: `..<` `..>` `...`
+
+### Day 4 - loops, loops, and more loops
+
+- For Loops perform a range of numbers, where we can access each value individually, if you don't wants to use a value in loop, u can use `_` (underscore) for omitting it.
+- A second way of writing loops is using `while`: give it a condition to check, and its loop code will go around and around until the condition fails.
+- The third way of writing loops is not commonly used, but it’s so simple to learn we might as well cover it: it’s called the `repeat` loop, and it’s identical to a `while` loop except the condition to check comes at the end.
+- We can exiting a loop with `break` statement. For exiting multiple loops, we need add a `label` for outer loop, and so, add `break label` statement.
+
+    e.g.: label `myLoop`
+
+    ```swift
+    myLoop: for i in 1...10 {
+        for j in 1...10 {
+            let product = i * j
+            print ("\(i) * \(j) is \(product)")
+
+            if product == 50 {
+                print("It's a bullseye!")
+                break myLoop
+            }
+        }
+    }
+    ```
+
+- For we skipping items in a loop, we can use `continue` statement.
+- Infinite loops don’t end until you ask them to, and are made using `while true`. Make sure you have a condition somewhere to end your infinite loops!
