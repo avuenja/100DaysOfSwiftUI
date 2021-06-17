@@ -63,3 +63,14 @@
 
 - For we skipping items in a loop, we can use `continue` statement.
 - Infinite loops don’t end until you ask them to, and are made using `while true`. Make sure you have a condition somewhere to end your infinite loops!
+
+### Day 5 - functions, parameters, and errors
+
+- Functions are designed to let us re-use code easily
+- Functions can accept parameters – just tell Swift the type of each parameter.
+- Functions can return values, and again you just specify what type will be sent back. Use tuples if you want to return several things.
+- You can use different names for parameters externally and internally, or omit the external name entirely.
+- Parameters can have default values, which helps you write less code when specific values are common.
+- Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.
+- Functions can throw errors, but you must call them using `try` and handle errors using `catch`.
+- All parameters passed into a Swift function are constants, so you can’t change them. If you want, you can pass in one or more parameters as `inout`, which means they can be changed inside your function, and those changes reflect in the original value outside the function.
