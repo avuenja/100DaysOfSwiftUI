@@ -8,7 +8,7 @@
 ### Day 1 - variables, simple data types, and string interpolation
 
 - For to use variables in Swift, we using the `var` word, the variables are always mutable.
-- Swift is a type-safe language, for `String` types we use double quotes (""), to involve a value. For values `Integer` we  pass directly the number or use `underscore` for separate the number.
+- Swift is a type-safe language, for `String` types we use double quotes (""), to involve a value. For values `Integer` we pass directly the number or use `underscore` for separate the number.
 - For being a type-safe language, we can't attribute a different type of value after to attribute the first time.
 - Multi-lines string we owe to use three double quotes (""") in start and end of value. For format the multi-lines strings, we pass the backslash (\).
 - Double values we separate the decimal places with dot (.), and the boolean values can be `true` or `false`.
@@ -45,21 +45,21 @@
 - The third way of writing loops is not commonly used, but it’s so simple to learn we might as well cover it: it’s called the `repeat` loop, and it’s identical to a `while` loop except the condition to check comes at the end.
 - We can exiting a loop with `break` statement. For exiting multiple loops, we need add a `label` for outer loop, and so, add `break label` statement.
 
-    e.g.: label `myLoop`
+  e.g.: label `myLoop`
 
-    ```swift
-    myLoop: for i in 1...10 {
-        for j in 1...10 {
-            let product = i * j
-            print ("\(i) * \(j) is \(product)")
+  ```swift
+  myLoop: for i in 1...10 {
+      for j in 1...10 {
+          let product = i * j
+          print ("\(i) * \(j) is \(product)")
 
-            if product == 50 {
-                print("It's a bullseye!")
-                break myLoop
-            }
-        }
-    }
-    ```
+          if product == 50 {
+              print("It's a bullseye!")
+              break myLoop
+          }
+      }
+  }
+  ```
 
 - For we skipping items in a loop, we can use `continue` statement.
 - Infinite loops don’t end until you ask them to, and are made using `while true`. Make sure you have a condition somewhere to end your infinite loops!
@@ -74,3 +74,29 @@
 - Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.
 - Functions can throw errors, but you must call them using `try` and handle errors using `catch`.
 - All parameters passed into a Swift function are constants, so you can’t change them. If you want, you can pass in one or more parameters as `inout`, which means they can be changed inside your function, and those changes reflect in the original value outside the function.
+
+### Day 6 - Closures, part one
+
+- Closures are like with functions, but are writing differently it. We can assign closure to a variable and after we used like a function
+- Unlike functions, closures put their parameters inside the opening brace.
+- In Closures, we can't use labels for the parameters. And we pass the parameter directly in the call.
+- Closures can also return values ,and they are written similarly to parameters: you write them inside your closure, directly before the `in` keyword.
+- Closures can be used like parameters into a functions. E.g.: `func travel(action: () -> Void) {}`
+- We can trailing closures syntax, when the closure be the last parameter into a function.
+
+  ```swift
+  func travel(action: () -> Void) {
+      print("I'm getting ready to go.")
+      action()
+      print("I arrived!")
+  }
+
+  // Trailing closure syntax
+  travel() {
+      print("I'm driving in my car")
+  }
+
+  travel {
+      print("I'm driving in my car")
+  }
+  ```
