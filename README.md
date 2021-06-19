@@ -109,3 +109,26 @@
 - If the last parameter to your function is a closure, you can use trailing closure syntax.
 - Swift automatically provides shorthand parameter names like `$0` and `$1`, but not everyone uses them.
 - If you use external values inside your closures, they will be captured so the closure can refer to them later.
+
+### Day 8 - Structs, part one
+
+- Swift lets you design your own types in two ways, of which the most common are called structures, or just structs. Structs can be given their own variables and constants, and their own functions, then created and used however you want.
+- Constants cannot be computed properties.
+- You can also use `willSet` to take action before a property changes, but that is rarely used.
+- What we want to happen is for Swift to print a message every time `amount` changes, and we can use a `didSet` property observer for that. This will run some code every time `amount` changes:
+
+  ```swift
+  struct Progress {
+      var task: String
+      var amount: Int {
+          didSet {
+              print("\(task) is now \(amount)% complete")
+          }
+      }
+  }
+
+  var progress = Progress(task: "Loading data", amount: 0)
+  progress.amount = 30
+  progress.amount = 80
+  progress.amount = 100
+  ```
