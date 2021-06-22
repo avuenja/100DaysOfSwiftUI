@@ -153,3 +153,11 @@
 - When two variables point at the same class instance, they both point at the same piece of memory – changing one changes the other.
 - Classes can have a deinitializer, which is code that gets run when an instance of the class is destroyed.
 - Classes don’t enforce constants as strongly as structs – if a property is declared as a variable, it can be changed regardless of how the class instance was created.
+
+### Day 11 - Protocols and extensions
+
+- Protocols describe what methods and properties a conforming type must have, but don’t provide the implementations of those methods.
+- You can build protocols on top of other protocols, similar to classes.
+- Extensions let you add methods and computed properties to specific types such as `Int`.
+- Protocol extensions let you add methods and computed properties to protocols.
+- Protocol-oriented programming is the practice of designing your app architecture as a series of protocols, then using protocol extensions to provide default method implementations.
