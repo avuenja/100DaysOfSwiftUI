@@ -173,3 +173,15 @@
 - You can use `try?` to convert a throwing function into an optional return value, or `try!` to crash if an error is thrown.
 - If you need your initializer to fail when it’s given bad input, use `init?()` to make a failable initializer.
 - You can use typecasting to convert one type of object to another.
+
+### Day 13 - Swift review, day one
+
+- Variables and constants `var` and `let`
+- Types of Data: `Int`, `String`, `Double`, `Bool`
+- Operators: `+`, `-`, `*`, `+=`, `-=`, `>`, `<`, `>=`, `<=`, `==`, `!=`, `&&`, `||`
+- String interpolation: `\()`
+- Arrays: `[,]`, `[String]`, `[Bool]()`
+- Dictionaries: `[key:value,key:value]`
+- Conditional statements: `if`, `else` , `else if`
+- Loops: `for in`, `while`
+- Switch case: `switch/case/default`
