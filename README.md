@@ -185,3 +185,12 @@
 - Conditional statements: `if`, `else` , `else if`
 - Loops: `for in`, `while`
 - Switch case: `switch/case/default`
+
+### Day 14 - Swift review, day two
+
+- Functions: `func`
+- Optionals: `?`, `String?`, `nil`
+- Optional chaining: `??`, `str?.uppercased()`
+- Enumerations: `enum`
+- Structs: `struct`
+- Classes: `class`
