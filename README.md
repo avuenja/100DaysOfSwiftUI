@@ -194,3 +194,24 @@
 - Enumerations: `enum`
 - Structs: `struct`
 - Classes: `class`
+
+### Day 15 - Swift review, day three
+
+- Properties, Property observers: `willSet`, `didSet`
+- Computed properties: `get {}`
+- Static properties and methods: `static`
+- Access control:
+  - **Public:** this means everyone can read and write the property.
+  - **Internal:** this means only your Swift code can read and write the property. If you ship your code as a framework for others to use, they won’t be able to read the property.
+  - **File Private:** this means that only Swift code in the same file as the type can read and write the property. `fileprivate`
+  - **Private:** this is the most restrictive option, and means the property is available only inside methods that belong to the type, or its extensions. `private`
+- Polymorphism and typecasting
+- Closures, Trailing closures:
+
+  ```swift
+  let vw = UIView()
+
+  UIView.animate(withDuration: 0.5) {
+      vw.alpha = 0
+  }
+  ```
