@@ -9,4 +9,4 @@
 
 Introduction to Swift and consolidation.
 
-README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/introduction/README.md)
+README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/main/introduction/README.md)
