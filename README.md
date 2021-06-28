@@ -20,3 +20,10 @@ README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blo
 - Modifying program state: For us to modify a value in SwiftUi we can use `@State` keyword, and also, we always add `private` keyword (Apple's recommendation).
 - Binding state to user interface controls: For two-way binding we use `$` before de variable name. e.g.: `$name` for `@State private name = ""`
 - Creating views in a loop: Use `ForEach`, for dynamically content use trailing syntax and access the currently item with `$0`, thus, we have two-way binding too.
+
+### Day 17 - Project 1, part two
+
+- Reading text from the user with TextField `Form`, `Section`
+- Creating pickers in a form `Picker`
+- Adding a segmented control for tip percentages `Section(header: Text("")) {}`, `Picker` with `SegmentedPickerStyle()`
+- Calculating the total per person

@@ -8,43 +8,52 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tapCount = 0
-    @State private var name = ""
+    @State private var checkAmount = ""
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 2
     
-    let students = ["Harry", "Hermione", "Ron"]
-    @State private var selectedStudent = "Hermione"
+    let tipPercentages = [10, 15, 20, 25, 0]
+    
+    var totalPerPerson: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
+        
+        let tipValue = orderAmount / 100 * tipSelection
+        let grandTotal = orderAmount + tipValue
+        let amountPerPerson = grandTotal / peopleCount
+        
+        return amountPerPerson
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Enter your name", text: $name)
-                    Text("Your name is \(name)")
+                    TextField("Amount", text: $checkAmount)
+                        .keyboardType(.decimalPad)
                     
-                    ForEach(0 ..< 3) { number in
-                        Text("Hello, world! \(number + 1)")
-                    }
-                }
-                
-                Section {
-                    Picker("Select your student", selection: $selectedStudent) {
-                        ForEach(0 ..< students.count) {
-                            Text(self.students[$0]).tag(self.students[$0])
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2 ..< 100) {
+                            Text("\($0) people").tag($0)
                         }
                     }
-                    Text("Selected student: \(selectedStudent)")
-                    
-                    Text("#100DaysOfSwiftUI")
-                    Text("My day 16!")
+                }
+                
+                Section(header: Text("How much tip do you want to leave?")) {
+                    Picker("Tip percentage", selection: $tipPercentage) {
+                        ForEach(0 ..< tipPercentages.count) {
+                            Text("\(self.tipPercentages[$0])%").tag(self.tipPercentages[$0])
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section {
-                    Button("Tap Count: \(tapCount)") {
-                        self.tapCount += 1
-                    }
+                    Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
             }
-            .navigationBarTitle("SwiftUI")
+            .navigationBarTitle("WeSplit")
         }
     }
 }
