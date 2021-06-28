@@ -5,11 +5,13 @@
 - One hour per day (watching, reading or writing Swift)
 - Tell people about your progress (twitter, instagram or anywhere platform)
 
-### Day 1 - 15
-
-Introduction to Swift and consolidation.
+### Day 1/15 - Introduction to Swift and consolidation.
 
 README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/main/introduction/README.md)
+
+## Project 1 - WeSplit
+
+![WeSplit](https://user-images.githubusercontent.com/5226773/123689859-16f03880-d82a-11eb-9549-57afc291afa3.png)
 
 ### Day 16 - Project 1, part one
 
