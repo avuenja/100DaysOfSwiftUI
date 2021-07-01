@@ -29,3 +29,11 @@ README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blo
 - Creating pickers in a form `Picker`
 - Adding a segmented control for tip percentages `Section(header: Text("")) {}`, `Picker` with `SegmentedPickerStyle()`
 - Calculating the total per person
+
+### Day 18 - Project 1, part the
+
+- WeSplit: Wrap Up
+
+### Day 19 - Challenge day
+
+- iConvert
