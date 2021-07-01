@@ -34,6 +34,6 @@ README: [introduction/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blo
 
 - WeSplit: Wrap Up
 
-### Day 19 - Challenge day
+## Day 19 - Challenge day (iConvert)
 
-- iConvert
+![iConvert](https://pbs.twimg.com/media/E5LKrJ9XwAgWUa6?format=jpg&name=medium)
