@@ -8,37 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingScore = false
+    @State private var scoreTitle = ""
+    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
+    @State private var correctAnswer = Int.random(in: 0...2)
+    
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea(.all)
             
-            Text("SwiftUI!")
-            Text("#100DaysOfSwiftUI")
-            
-            Spacer()
-            
-            HStack {
-                Text("@celopeccin")
-                Text("Project 2 - Guess The Flag")
+            VStack(spacing: 30) {
+                VStack {
+                    Text("Tap the flag of")
+                        .foregroundColor(.white)
+                    Text(countries[correctAnswer])
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                }
                 
-                //LinearGradient(gradient: Gradient(colors: [.red, .blue]), startPoint: .top, endPoint: .bottom)
-                //RadialGradient(gradient: Gradient(colors: [.yellow, .black]), center: .center, startRadius: 20, endRadius: 200)
-                //AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
-            }
-            
-            Spacer()
-            
-            ZStack {
-                //Color(red: 1, green: 0.8, blue: 0)
-                //Color.red.edgesIgnoringSafeArea(.all)
-                //Color.blue.frame(width: 200, height: 200)
+                ForEach(0 ..< 3) { number in
+                    Button(action: {
+                        self.flagTapped(number)
+                    }) {
+                        Image(self.countries[number])
+                            .renderingMode(.original)
+                            .clipShape(Capsule())
+                            //.overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                            .shadow(color: .black, radius: 2)
+                    }
+                }
                 
-                Text("Hacking with Swift")
-                Text("Inside Stack")
+                Spacer()
             }
-            
-            Spacer()
         }
+        .alert(isPresented: $showingScore, content: {
+            Alert(title: Text(scoreTitle), message: Text("Your score is ???"), dismissButton: .default(Text("Continue")) {
+                self.askQuestion()
+            })
+        })
+    }
+    
+    func flagTapped(_ number: Int) {
+        if number == correctAnswer {
+            scoreTitle = "Correct"
+        } else {
+            scoreTitle = "Wrong"
+        }
+        
+        showingScore = true
+    }
+    
+    func askQuestion() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
     }
 }
 
