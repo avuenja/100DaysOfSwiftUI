@@ -1,6 +1,6 @@
 # Project 2 (Guess The Flag)
 
-![GuessTheFlag](https://pbs.twimg.com/media/E5VShBzWQAUBIda?format=jpg&name=medium)
+![GuessTheFlag](https://pbs.twimg.com/media/E5YMU3PWYAEGiDD?format=jpg&name=4096x4096)
 
 ### Day 20 - Project 2, part one
 
@@ -53,3 +53,7 @@
 - Stacking up buttons
 - Showing the player’s score with an alert
 - Styling our flags
+
+### Day 22 - Project 2, part three
+
+- Guess The Flag: Wrap Up
