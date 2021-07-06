@@ -38,3 +38,7 @@ README: [project2/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/ma
 - View composition
 - Custom modifiers
 - Custom containers
+
+### 24 - Project 3, part two
+
+- Views and modifiers: Wrap up
