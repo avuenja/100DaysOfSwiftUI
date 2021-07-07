@@ -42,3 +42,7 @@ README: [project2/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/ma
 ### 24 - Project 3, part two
 
 - Views and modifiers: Wrap up
+
+### 25 - Milestone: Projects 1-3 (RockPaperScissors)
+
+![RockPaperScissors](https://pbs.twimg.com/media/E5qDTotXwAQwnla?format=jpg&name=4096x4096)
