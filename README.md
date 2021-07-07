@@ -46,3 +46,11 @@ README: [project2/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/ma
 ### 25 - Milestone: Projects 1-3 (RockPaperScissors)
 
 ![RockPaperScissors](https://pbs.twimg.com/media/E5qDTotXwAQwnla?format=jpg&name=4096x4096)
+
+### Day 26 - Project 4, part one
+
+- BetterRest: Introduction
+- Entering numbers with Stepper
+- Selecting dates and times with DatePicker
+- Working with dates
+- Training a model with Create ML
