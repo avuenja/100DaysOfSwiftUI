@@ -15,3 +15,7 @@
 - Building a basic layout
 - Connecting SwiftUI to Core ML
 - Cleaning up the user interface
+
+### Day 28 - Project 4, part three
+
+- BetterRest: Wrap up

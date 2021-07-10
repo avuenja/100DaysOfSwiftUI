@@ -33,7 +33,7 @@ _README: [project3/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/m
 
 ![RockPaperScissors](https://pbs.twimg.com/media/E5qDTotXwAQwnla?format=jpg&name=4096x4096)
 
-### Project 4 - Better Rest (26/n)
+### Project 4 - Better Rest (26/28)
 
 ![BetterRest](https://pbs.twimg.com/media/E50HjXAWQAcrRX8?format=jpg&name=4096x4096)
 
