@@ -38,3 +38,9 @@ _README: [project3/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/m
 ![BetterRest](https://pbs.twimg.com/media/E50HjXAWQAcrRX8?format=jpg&name=4096x4096)
 
 _README: [project4/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/main/project4/README.md)_
+
+### Project 5 - Word Scramble (29/n)
+
+![WordScramble](https://pbs.twimg.com/media/E6D5PmmWEAAllzO?format=jpg&name=4096x4096)
+
+_README: [project5/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/main/project5/README.md)_
