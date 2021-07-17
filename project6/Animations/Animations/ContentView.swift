@@ -7,60 +7,68 @@
 
 import SwiftUI
 
+struct CornerRotateModifier: ViewModifier {
+    let amount: Double
+    let anchor: UnitPoint
+
+    func body(content: Content) -> some View {
+        content.rotationEffect(.degrees(amount), anchor: anchor).clipped()
+    }
+}
+
+extension AnyTransition {
+    static var pivot: AnyTransition {
+        .modifier(
+            active: CornerRotateModifier(amount: -90, anchor: .topLeading),
+            identity: CornerRotateModifier(amount: 0, anchor: .topLeading)
+        )
+    }
+}
+
 struct ContentView: View {
-    @State private var redAnimationAmount: CGFloat = 1
-    @State private var blueAnimationAmount: CGFloat = 1
-    @State private var greenAnimationAmount = 0.0
+    let letters = Array("Hello SwiftUI")
+    
+    @State private var enabled = false
+    @State private var dragAmount = CGSize.zero
+    
+    @State private var isShowingRed = false
     
     var body: some View {
-        VStack(spacing: 60) {
-            Button("Tap Me") {
-                self.redAnimationAmount += 1
-            }
-            .padding(50)
-            .background(Color.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .scaleEffect(redAnimationAmount)
-            .animation(
-                Animation.easeInOut(duration: 1)
-                    .repeatCount(3, autoreverses: true)
-            )
-            
-            Button("Tap Me") {
-                // do nothing
-            }
-            .padding(50)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(Color.blue)
-                    .scaleEffect(blueAnimationAmount)
-                    .opacity(Double(2 - blueAnimationAmount))
-                    .animation(
-                        Animation.easeInOut(duration: 1)
-                            .repeatForever(autoreverses: false)
-                    )
-            )
-            .onAppear {
-                self.blueAnimationAmount = 2
-            }
-            
-            Button("Tap Me") {
-                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                    self.greenAnimationAmount += 360
+        VStack(spacing: 20) {
+            HStack(spacing: 0) {
+                ForEach(0..<letters.count) { num in
+                    Text(String(self.letters[num]))
+                        .padding(5)
+                        .font(.title)
+                        .background(self.enabled ? Color.blue : Color.red)
+                        .foregroundColor(.white)
+                        .offset(self.dragAmount)
+                        .animation(Animation.default.delay(Double(num) / 20))
                 }
             }
-            .padding(50)
-            .background(Color.green)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .rotation3DEffect(
-                .degrees(greenAnimationAmount),
-                axis: (x: 0, y: 1, z: 0)
+            .gesture(
+                DragGesture()
+                    .onChanged {
+                        self.dragAmount = $0.translation
+                    }
+                    .onEnded { _ in
+                        self.dragAmount = .zero
+                        self.enabled.toggle()
+                    }
             )
+            
+            Button("Tap Me") {
+                withAnimation {
+                    self.isShowingRed.toggle()
+                }
+            }
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(Color.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.scale)
+            }
         }
     }
 }

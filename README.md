@@ -48,3 +48,5 @@ _README: [project5/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/m
 ### Project 6 - Animations (32/n)
 
 _README: [project6/README.md](https://github.com/avuenja/100DaysOfSwiftUI/blob/main/project6/README.md)_
+
+### Day 35 - Milestone: Projects 4-6
